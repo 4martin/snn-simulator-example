@@ -1,0 +1,86 @@
+###################################################
+#  for each neuron:
+#  max number of inputs: 2
+#  max number of synapses: 2
+#
+#  total neurons (vectors): 4
+#  max threshold: 1
+###################################################
+inputs:
+[ 1.  0.  1.  1.  0.  1.  0.  1.]
+###################################################
+weights:
+[ 0.59368014  0.32785597  0.96577007  0.81423032  0.19942322  0.34216741
+  0.89568287  0.66347647]
+###################################################
+inputs before running network:
+[ 1.  0.  1.  1.  0.  1.  0.  1.]
+###################################################
+thresholds:
+[ 0.19107695  0.3097479   0.63832468  0.23621412]
+###################################################
+synapses of all 4 neurons/vectors:
+[ 4. -1.  6.  7.  2.  6.  4.  5.]
+###################################################
+weighted sum of vector 0: 0.593680
+weighted sum of vector 0: 0.593680
+weighted sum of vector 1: 1.780000
+weighted sum of vector 1: 1.780000
+weighted sum of vector 3: 0.663476
+weighted sum of vector 3: 0.663476
+threshold of vector 0: 0.191077
+threshold of vector 0: 0.191077
+threshold of vector 1: 0.309748
+threshold of vector 1: 0.309748
+threshold of vector 3: 0.236214
+threshold of vector 3: 0.236214
+update input number 4 on step 0 within thread 0
+update input number 6 on step 0 within thread 1
+update input number 4 on step 0 within thread 3
+update input number 7 on step 1 within thread 1
+update input number 5 on step 1 within thread 3
+weighted sum of vector 2: 0.883758
+weighted sum of vector 2: 0.883758
+weighted sum of vector 3: 1.559159
+weighted sum of vector 3: 1.559159
+threshold of vector 2: 0.638325
+threshold of vector 2: 0.638325
+threshold of vector 3: 0.236214
+threshold of vector 3: 0.236214
+update input number 2 on step 0 within thread 2
+update input number 4 on step 0 within thread 3
+update input number 6 on step 1 within thread 2
+update input number 5 on step 1 within thread 3
+weighted sum of vector 1: 0.965770
+weighted sum of vector 1: 0.965770
+weighted sum of vector 3: 0.895683
+weighted sum of vector 3: 0.895683
+threshold of vector 1: 0.309748
+threshold of vector 1: 0.309748
+threshold of vector 3: 0.236214
+threshold of vector 3: 0.236214
+update input number 6 on step 0 within thread 1
+update input number 4 on step 0 within thread 3
+update input number 7 on step 1 within thread 1
+update input number 5 on step 1 within thread 3
+weighted sum of vector 2: 1.083181
+weighted sum of vector 2: 1.083181
+weighted sum of vector 3: 1.559159
+weighted sum of vector 3: 1.559159
+threshold of vector 2: 0.638325
+threshold of vector 2: 0.638325
+threshold of vector 3: 0.236214
+threshold of vector 3: 0.236214
+update input number 2 on step 0 within thread 2
+update input number 4 on step 0 within thread 3
+update input number 6 on step 1 within thread 2
+update input number 5 on step 1 within thread 3
+last weighted sum results:
+[ 0.  0.  0.  0.]
+###################################################
+last fired neurons:
+[ 0.  0.  1.  1.]
+###################################################
+inputs after running network:
+[ 0.  0.  1.  0.  1.  1.  1.  0.]
+###################################################
