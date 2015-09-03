@@ -1,0 +1,101 @@
+###################################################
+#  for each neuron:
+#  max number of inputs: 2
+#  max number of synapses: 2
+#
+#  total neurons (vectors): 4
+#  max threshold: 1
+###################################################
+inputs:
+[ 1.  0.  1.  1.  0.  1.  0.  1.]  <=== The #0 neurons inputs are 1,0. The #1 neurons inputs are 1,1. etc.
+###################################################
+weights:
+[ 0.59368014  0.32785597  0.96577007  0.81423032  0.19942322  0.34216741
+  0.89568287  0.66347647]   <=== The n'th weight corresponds to the n'th input
+###################################################
+inputs before running network:
+[ 1.  0.  1.  1.  0.  1.  0.  1.]
+###################################################
+thresholds:
+[ 0.19107695  0.3097479   0.63832468  0.23621412]  <== m'th threshold correspond to m'th neuron
+###################################################
+synapses of all 4 neurons/vectors:
+[ 4. -1.  6.  7.  2.  6.  4.  5.]  <== #0 neuron connects to input #4 only (starting from 0, it means 3rd neuron).
+                                   <== #1 neuron connects to inputs #6 and #7 (both are for #3=last neuron).
+###################################################
+weighted sum of vector 0: 0.593680  <== this is 1*0.59368014+0*0.32785597
+weighted sum of vector 0: 0.593680
+weighted sum of vector 1: 1.780000  <== this is 1*0.96577007+1*0.81423032
+weighted sum of vector 1: 1.780000
+weighted sum of vector 3: 0.663476
+weighted sum of vector 3: 0.663476
+threshold of vector 0: 0.191077  <== crossed threshold for vector #0 (0.593680 >= 0.191077)
+threshold of vector 0: 0.191077
+threshold of vector 1: 0.309748  <== crossed threshold for vector #1 (1.780000 >= 0.309748)
+threshold of vector 1: 0.309748      but not crossed for vector #2
+threshold of vector 3: 0.236214      0.34216741 < 0.63832468
+threshold of vector 3: 0.236214
+
+<== zero inputs here (assume signal fades in 1 clock), before updating with spikes
+
+update input number 4 on step 0 within thread 0  <== #0 neuron causes an update of #4 input
+update input number 6 on step 0 within thread 1  <== #1 neuron causes an update of #6,#7 inputs
+update input number 4 on step 0 within thread 3  <== #3 neuron causes an update of #4,#5 inputs
+update input number 7 on step 1 within thread 1      note: both neuron #0,#3 cause an update of #4 input
+update input number 5 on step 1 within thread 3
+
+<== inputs after first cycle are [ 0.  0.  0.  0.  1.  1.  1.  1.] 
+
+weighted sum of vector 2: 0.883758  <== second cycle starts with updated inputs 
+weighted sum of vector 2: 0.883758
+weighted sum of vector 3: 1.559159
+weighted sum of vector 3: 1.559159
+threshold of vector 2: 0.638325
+threshold of vector 2: 0.638325
+threshold of vector 3: 0.236214
+threshold of vector 3: 0.236214
+update input number 2 on step 0 within thread 2
+update input number 4 on step 0 within thread 3
+update input number 6 on step 1 within thread 2
+update input number 5 on step 1 within thread 3
+
+<== inputs after second cycle are [ 0.  0.  1.  0.  1.  1.  1.  0.] 
+
+weighted sum of vector 1: 0.965770  <== third cycle starts with updated inputs
+weighted sum of vector 1: 0.965770
+weighted sum of vector 3: 0.895683
+weighted sum of vector 3: 0.895683
+threshold of vector 1: 0.309748
+threshold of vector 1: 0.309748
+threshold of vector 3: 0.236214
+threshold of vector 3: 0.236214
+update input number 6 on step 0 within thread 1
+update input number 4 on step 0 within thread 3
+update input number 7 on step 1 within thread 1
+update input number 5 on step 1 within thread 3
+
+<== inputs after second cycle are [ 0.  0.  0.  0.  1.  1.  1.  1.]
+<== note: we can already see that this is a loop, since we got to a previous cycle state (second)
+<== and the network is deterministic
+
+weighted sum of vector 2: 1.083181  <== forth cycle starts with updated inputs
+weighted sum of vector 2: 1.083181
+weighted sum of vector 3: 1.559159
+weighted sum of vector 3: 1.559159
+threshold of vector 2: 0.638325
+threshold of vector 2: 0.638325
+threshold of vector 3: 0.236214
+threshold of vector 3: 0.236214
+update input number 2 on step 0 within thread 2
+update input number 4 on step 0 within thread 3
+update input number 6 on step 1 within thread 2
+update input number 5 on step 1 within thread 3
+last weighted sum results:
+[ 0.  0.  0.  0.]
+###################################################
+last fired neurons:
+[ 0.  0.  1.  1.]
+###################################################
+inputs after running network:
+[ 0.  0.  1.  0.  1.  1.  1.  0.]
+###################################################

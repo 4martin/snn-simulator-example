@@ -1,0 +1,53 @@
+###################################################
+#  for each neuron:
+#  max number of inputs: 2
+#  max number of synapses: 2
+#
+#  total neurons (vectors): 4
+#  max threshold: 1
+###################################################
+inputs:
+[ 1.  0.  1.  1.  0.  1.  0.  1.]
+###################################################
+weights:
+[ 0.8014127   0.30611876  0.84199691  0.48552278  0.94915146  0.69229084
+  0.31528512  0.39839578]
+###################################################
+inputs before running network:
+[ 1.  0.  1.  1.  0.  1.  0.  1.]
+###################################################
+thresholds:
+[ 0.87037647  0.01701391  0.13532715  0.21601582]
+###################################################
+synapses of all 4 neurons/vectors:
+[ 5.  3. -1. -1. -1. -1.  4. -1.]
+###################################################
+weighted sum of vector 1: 1.327520
+weighted sum of vector 1: 1.327520
+weighted sum of vector 2: 0.692291
+weighted sum of vector 2: 0.692291
+weighted sum of vector 3: 0.398396
+weighted sum of vector 3: 0.398396
+threshold of vector 1: 0.017014
+threshold of vector 1: 0.017014
+threshold of vector 2: 0.135327
+threshold of vector 2: 0.135327
+threshold of vector 3: 0.216016
+threshold of vector 3: 0.216016
+update input number 4 on step 0 within thread 3
+weighted sum of vector 2: 0.949151
+weighted sum of vector 2: 0.949151
+threshold of vector 2: 0.135327
+threshold of vector 2: 0.135327
+last weighted sum results:
+[ 0.8014127  0.         0.         0.       ]
+###################################################
+last fired neurons:
+[ 0.  0.  0.  0.]
+###################################################
+inputs after running network:
+[ 0.  0.  0.  0.  0.  0.  0.  0.]
+###################################################
+
+<== here neurons fired after one cycle, but none on the next cycles
+<== so we landed at the zero state.
